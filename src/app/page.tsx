@@ -73,9 +73,9 @@ export default function Home() {
                   </div>
                 </div>
                 
-                {/* Simple contact icons with maximum spacing */}
+                {/* Simple contact icons with maximum spacing - optimized for all screens */}
                 <div className="mt-6 mb-4">
-                  <div className="flex justify-between items-center w-full max-w-xs mx-auto">
+                  <div className="flex justify-center gap-10 items-center w-full max-w-xs mx-auto">
                     <a href="https://t.me/+79781643792" className="contact-link">
                       <i className="fab fa-telegram-plane text-[#0088cc]"></i>
                     </a>
@@ -97,9 +97,15 @@ export default function Home() {
             <style jsx>{`
               .contact-link {
                 @apply transition-transform duration-200 ease-in-out p-1;
-                font-size: 3rem;
-                margin: 0 20px;
-                padding: 10px;
+                padding: 0 15px;
+                font-size: 2rem;
+              }
+              
+              @media (max-width: 640px) {
+                .contact-link {
+                  font-size: 1.75rem;
+                  padding: 0.5rem;
+                }
               }
               
               .contact-link:hover {
