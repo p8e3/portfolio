@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { useRef } from "react";
-import { Demo } from "@/components/ui/demo";
+
+
 import { Waves } from "@/components/ui/waves-background";
 
 export default function Home() {
