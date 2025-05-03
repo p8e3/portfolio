@@ -23,8 +23,8 @@ export default function Home() {
           yGap={32}
         />
       </div>
-      <div className="min-h-screen flex flex-col p-4">
-        <div className="w-full max-w-4xl rounded-xl shadow-xl overflow-hidden text-white">
+      <div className="min-h-screen h-full flex flex-col p-4">
+        <div className="w-full max-w-4xl rounded-xl shadow-xl text-white">
           <div className="text-white text-center bg-gradient-to-r from-blue-100 to-blue-200 rounded-t-xl relative">
             {/* Decorative elements */}
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-400 to-blue-600"></div>
