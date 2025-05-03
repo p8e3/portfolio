@@ -1,42 +1,31 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
+import { Demo } from "@/components/ui/demo";
+import { Waves } from "@/components/ui/waves-background";
 
 export default function Home() {
-  const backgroundRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (typeof window !== 'undefined' && backgroundRef.current) {
-      // @ts-expect-error - VANTA is loaded from external script
-      const vantaEffect = window.VANTA.WAVES({
-        el: backgroundRef.current,
-        mouseControls: true,
-        touchControls: true,
-        gyroControls: false,
-        minHeight: 200.00,
-        minWidth: 200.00,
-        scale: 1.00,
-        scaleMobile: 1.00,
-        color: 0x0072ff,
-        shininess: 35.00,
-        waveHeight: 20.00,
-        waveSpeed: 0.75,
-        zoom: 0.85
-      });
-
-      return () => {
-        if (vantaEffect) vantaEffect.destroy();
-      };
-    }
-  }, []);
-
   return (
     <>
-      <div id="background" ref={backgroundRef} className="fixed top-0 left-0 w-full h-full z-[-1]"></div>
+      <div id="background" className="fixed top-0 left-0 w-full h-full z-[-1]">
+        <Waves 
+          lineColor="rgba(0, 114, 255, 0.2)"
+          backgroundColor="#000000"
+          waveSpeedX={0.0125}
+          waveSpeedY={0.005}
+          waveAmpX={32}
+          waveAmpY={16}
+          friction={0.925}
+          tension={0.005}
+          maxCursorMove={100}
+          xGap={10}
+          yGap={32}
+        />
+      </div>
       <div className="min-h-screen flex items-center justify-center p-4">
-        <div className="bg-white bg-opacity-90 w-full max-w-4xl rounded-xl shadow-xl overflow-hidden">
-          <div className="p-8 text-center bg-gradient-to-r from-blue-100 to-blue-200 rounded-t-xl relative">
+        <div className="w-full max-w-4xl rounded-xl shadow-xl overflow-hidden text-white">
+          <div className="text-white text-center bg-gradient-to-r from-blue-100 to-blue-200 rounded-t-xl relative">
             {/* Decorative elements */}
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-400 to-blue-600"></div>
             <div className="absolute bottom-0 left-0 w-full h-10 bg-gradient-to-t from-white to-transparent"></div>
@@ -77,16 +66,16 @@ export default function Home() {
                 <div className="mt-6 mb-4">
                   <div className="flex justify-center gap-10 items-center w-full max-w-xs mx-auto">
                     <a href="https://t.me/+79781643792" className="contact-link">
-                      <i className="fab fa-telegram-plane text-[#0088cc]"></i>
+                      <i className="fab fa-telegram-plane text-[#229ED9]"></i>
                     </a>
                     <a href="https://github.com/p8e3" className="contact-link">
-                      <i className="fab fa-github text-gray-800"></i>
+                      <i className="fab fa-github text-white"></i>
                     </a>
                     <a href="mailto:vlasov.stas.web@gmail.com" className="contact-link">
-                      <i className="far fa-envelope text-red-500"></i>
+                      <i className="far fa-envelope text-[#F87171]"></i>
                     </a>
                     <a href="tel:+79781643792" className="contact-link">
-                      <i className="fas fa-phone-alt text-green-500"></i>
+                      <i className="fas fa-phone-alt text-[#34D399]"></i>
                     </a>
                   </div>
                 </div>
@@ -115,9 +104,9 @@ export default function Home() {
           </div>
           
           {/* Rest of the content remains the same */}
-          <div className="bg-white p-8">
-            <h2 className="text-2xl font-bold mb-6 text-gray-800 text-center">About me</h2>
-            <div className="text-gray-700 space-y-4 max-w-2xl mx-auto">
+          <div className="bg-white/10 p-8">
+            <h2 className="text-2xl font-bold mb-6 text-white text-center">About me</h2>
+            <div className="text-white space-y-4 max-w-2xl mx-auto">
               <p>
                 Full-stack developer with over 12 years of experience creating web applications for businesses. I specialize in React, Node.js, and modern JavaScript frameworks.
               </p>
@@ -131,112 +120,112 @@ export default function Home() {
 
             {/* Key Skills */}
             <div className="mt-8 mb-6">
-              <h2 className="text-2xl font-bold mb-8 text-gray-800 text-center">Key Skills</h2>
+              <h2 className="text-2xl font-bold mb-8 text-white text-center">Key Skills</h2>
               
               <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
-                <div className="bg-white rounded-xl shadow-md p-6 flex flex-col items-center justify-center transform hover:scale-105 transition-transform hover:shadow-lg">
+                <div className="bg-white/10 rounded-xl shadow-md p-6 flex flex-col items-center justify-center transform hover:scale-105 transition-transform hover:shadow-lg">
                   <i className="fas fa-code text-4xl text-blue-500 mb-3"></i>
-                  <span className="font-medium text-gray-700">Full-stack Development</span>
+                  <span className="font-medium text-white">Full-stack Development</span>
                 </div>
-                <div className="bg-white rounded-xl shadow-md p-6 flex flex-col items-center justify-center transform hover:scale-105 transition-transform hover:shadow-lg">
+                <div className="bg-white/10 rounded-xl shadow-md p-6 flex flex-col items-center justify-center transform hover:scale-105 transition-transform hover:shadow-lg">
                   <i className="fas fa-mobile-alt text-4xl text-green-500 mb-3"></i>
-                  <span className="font-medium text-gray-700">Responsive Design</span>
+                  <span className="font-medium text-white">Responsive Design</span>
                 </div>
-                <div className="bg-white rounded-xl shadow-md p-6 flex flex-col items-center justify-center transform hover:scale-105 transition-transform hover:shadow-lg">
+                <div className="bg-white/10 rounded-xl shadow-md p-6 flex flex-col items-center justify-center transform hover:scale-105 transition-transform hover:shadow-lg">
                   <i className="fas fa-plug text-4xl text-indigo-500 mb-3"></i>
-                  <span className="font-medium text-gray-700">API Development</span>
+                  <span className="font-medium text-white">API Development</span>
                 </div>
-                <div className="bg-white rounded-xl shadow-md p-6 flex flex-col items-center justify-center transform hover:scale-105 transition-transform hover:shadow-lg">
+                <div className="bg-white/10 rounded-xl shadow-md p-6 flex flex-col items-center justify-center transform hover:scale-105 transition-transform hover:shadow-lg">
                   <i className="fas fa-pencil-ruler text-4xl text-purple-500 mb-3"></i>
-                  <span className="font-medium text-gray-700">UI/UX Design</span>
+                  <span className="font-medium text-white">UI/UX Design</span>
                 </div>
-                <div className="bg-white rounded-xl shadow-md p-6 flex flex-col items-center justify-center transform hover:scale-105 transition-transform hover:shadow-lg">
+                <div className="bg-white/10 rounded-xl shadow-md p-6 flex flex-col items-center justify-center transform hover:scale-105 transition-transform hover:shadow-lg">
                   <i className="fas fa-users text-4xl text-yellow-500 mb-3"></i>
-                  <span className="font-medium text-gray-700">Team Leadership</span>
+                  <span className="font-medium text-white">Team Leadership</span>
                 </div>
-                <div className="bg-white rounded-xl shadow-md p-6 flex flex-col items-center justify-center transform hover:scale-105 transition-transform hover:shadow-lg">
+                <div className="bg-white/10 rounded-xl shadow-md p-6 flex flex-col items-center justify-center transform hover:scale-105 transition-transform hover:shadow-lg">
                   <i className="fas fa-tasks text-4xl text-red-500 mb-3"></i>
-                  <span className="font-medium text-gray-700">Project Management</span>
+                  <span className="font-medium text-white">Project Management</span>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Tech Stack */}
-          <div className="p-8 bg-gray-50">
-            <h2 className="text-2xl font-bold mb-8 text-gray-800 text-center">Tech Stack</h2>
+          <div className="p-8 bg-white/10">
+            <h2 className="text-2xl font-bold mb-8 text-white text-center">Tech Stack</h2>
             
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-3xl mx-auto">
               {/* Frontend */}
-              <div className="bg-white rounded-xl shadow-md p-6 flex flex-col items-center justify-center transform hover:scale-105 transition-transform hover:shadow-lg">
+              <div className="bg-white/10 rounded-xl shadow-md p-6 flex flex-col items-center justify-center transform hover:scale-105 transition-transform hover:shadow-lg">
                 <i className="fab fa-react text-4xl text-blue-500 mb-3"></i>
-                <span className="font-medium text-gray-700">React</span>
+                <span className="font-medium text-white">React</span>
               </div>
-              <div className="bg-white rounded-xl shadow-md p-6 flex flex-col items-center justify-center transform hover:scale-105 transition-transform hover:shadow-lg">
+              <div className="bg-white/10 rounded-xl shadow-md p-6 flex flex-col items-center justify-center transform hover:scale-105 transition-transform hover:shadow-lg">
                 <i className="fab fa-vuejs text-4xl text-green-500 mb-3"></i>
-                <span className="font-medium text-gray-700">Vue.js</span>
+                <span className="font-medium text-white">Vue.js</span>
               </div>
-              <div className="bg-white rounded-xl shadow-md p-6 flex flex-col items-center justify-center transform hover:scale-105 transition-transform hover:shadow-lg">
+              <div className="bg-white/10 rounded-xl shadow-md p-6 flex flex-col items-center justify-center transform hover:scale-105 transition-transform hover:shadow-lg">
                 <i className="fab fa-js text-4xl text-yellow-500 mb-3"></i>
-                <span className="font-medium text-gray-700">JavaScript</span>
+                <span className="font-medium text-white">JavaScript</span>
               </div>
-              <div className="bg-white rounded-xl shadow-md p-6 flex flex-col items-center justify-center transform hover:scale-105 transition-transform hover:shadow-lg">
+              <div className="bg-white/10 rounded-xl shadow-md p-6 flex flex-col items-center justify-center transform hover:scale-105 transition-transform hover:shadow-lg">
                 <i className="fab fa-angular text-4xl text-red-600 mb-3"></i>
-                <span className="font-medium text-gray-700">Angular</span>
+                <span className="font-medium text-white">Angular</span>
               </div>
 
               {/* Backend & CMS */}
-              <div className="bg-white rounded-xl shadow-md p-6 flex flex-col items-center justify-center transform hover:scale-105 transition-transform hover:shadow-lg">
+              <div className="bg-white/10 rounded-xl shadow-md p-6 flex flex-col items-center justify-center transform hover:scale-105 transition-transform hover:shadow-lg">
                 <i className="fab fa-php text-4xl text-indigo-500 mb-3"></i>
-                <span className="font-medium text-gray-700">PHP</span>
+                <span className="font-medium text-white">PHP</span>
               </div>
-              <div className="bg-white rounded-xl shadow-md p-6 flex flex-col items-center justify-center transform hover:scale-105 transition-transform hover:shadow-lg">
+              <div className="rounded-xl shadow-md p-6 flex flex-col items-center justify-center transform hover:scale-105 transition-transform hover:shadow-lg">
                 <i className="fab fa-wordpress text-4xl text-blue-600 mb-3"></i>
-                <span className="font-medium text-gray-700">WordPress</span>
+                <span className="font-medium text-white">WordPress</span>
               </div>
-              <div className="bg-white rounded-xl shadow-md p-6 flex flex-col items-center justify-center transform hover:scale-105 transition-transform hover:shadow-lg">
-                <i className="fas fa-shopping-cart text-4xl text-gray-600 mb-3"></i>
-                <span className="font-medium text-gray-700">Bitrix</span>
+              <div className="rounded-xl shadow-md p-6 flex flex-col items-center justify-center transform hover:scale-105 transition-transform hover:shadow-lg">
+                <i className="fas fa-shopping-cart text-4xl text-white mb-3"></i>
+                <span className="font-medium text-white">Bitrix</span>
               </div>
-              <div className="bg-white rounded-xl shadow-md p-6 flex flex-col items-center justify-center transform hover:scale-105 transition-transform hover:shadow-lg">
+              <div className="rounded-xl shadow-md p-6 flex flex-col items-center justify-center transform hover:scale-105 transition-transform hover:shadow-lg">
                 <i className="fab fa-node-js text-4xl text-green-600 mb-3"></i>
-                <span className="font-medium text-gray-700">Node.js</span>
+                <span className="font-medium text-white">Node.js</span>
               </div>
               
               {/* Python & Automation */}
-              <div className="bg-white rounded-xl shadow-md p-6 flex flex-col items-center justify-center transform hover:scale-105 transition-transform hover:shadow-lg">
+              <div className="bg-white/10 rounded-xl shadow-md p-6 flex flex-col items-center justify-center transform hover:scale-105 transition-transform hover:shadow-lg">
                 <i className="fab fa-python text-4xl text-blue-500 mb-3"></i>
-                <span className="font-medium text-gray-700">Python</span>
+                <span className="font-medium text-white">Python</span>
               </div>
-              <div className="bg-white rounded-xl shadow-md p-6 flex flex-col items-center justify-center transform hover:scale-105 transition-transform hover:shadow-lg">
+              <div className="bg-white/10 rounded-xl shadow-md p-6 flex flex-col items-center justify-center transform hover:scale-105 transition-transform hover:shadow-lg">
                 <i className="fab fa-telegram text-4xl text-[#0088cc] mb-3"></i>
-                <span className="font-medium text-gray-700">Telegram Bots</span>
+                <span className="font-medium text-white">Telegram Bots</span>
               </div>
-              <div className="bg-white rounded-xl shadow-md p-6 flex flex-col items-center justify-center transform hover:scale-105 transition-transform hover:shadow-lg">
+              <div className="bg-white/10 rounded-xl shadow-md p-6 flex flex-col items-center justify-center transform hover:scale-105 transition-transform hover:shadow-lg">
                 <i className="fas fa-robot text-4xl text-purple-600 mb-3"></i>
-                <span className="font-medium text-gray-700">Aiogram</span>
+                <span className="font-medium text-white">Aiogram</span>
               </div>
-              <div className="bg-white rounded-xl shadow-md p-6 flex flex-col items-center justify-center transform hover:scale-105 transition-transform hover:shadow-lg">
-                <i className="fas fa-cogs text-4xl text-gray-700 mb-3"></i>
-                <span className="font-medium text-gray-700">Automation</span>
+              <div className="bg-white/10 rounded-xl shadow-md p-6 flex flex-col items-center justify-center transform hover:scale-105 transition-transform hover:shadow-lg">
+                <i className="fas fa-cogs text-4xl text-white mb-3"></i>
+                <span className="font-medium text-white">Automation</span>
               </div>
               
               {/* Database & Tools */}
-              <div className="bg-white rounded-xl shadow-md p-6 flex flex-col items-center justify-center transform hover:scale-105 transition-transform hover:shadow-lg">
+              <div className="bg-white/10 rounded-xl shadow-md p-6 flex flex-col items-center justify-center transform hover:scale-105 transition-transform hover:shadow-lg">
                 <i className="fas fa-database text-4xl text-blue-400 mb-3"></i>
-                <span className="font-medium text-gray-700">MySQL</span>
+                <span className="font-medium text-white">MySQL</span>
               </div>
-              <div className="bg-white rounded-xl shadow-md p-6 flex flex-col items-center justify-center transform hover:scale-105 transition-transform hover:shadow-lg">
+              <div className="bg-white/10 rounded-xl shadow-md p-6 flex flex-col items-center justify-center transform hover:scale-105 transition-transform hover:shadow-lg">
                 <i className="fas fa-database text-4xl text-blue-700 mb-3"></i>
-                <span className="font-medium text-gray-700">MongoDB</span>
+                <span className="font-medium text-white">MongoDB</span>
               </div>
-              <div className="bg-white rounded-xl shadow-md p-6 flex flex-col items-center justify-center transform hover:scale-105 transition-transform hover:shadow-lg">
+              <div className="bg-white/10 rounded-xl shadow-md p-6 flex flex-col items-center justify-center transform hover:scale-105 transition-transform hover:shadow-lg">
                 <i className="fab fa-docker text-4xl text-blue-500 mb-3"></i>
-                <span className="font-medium text-gray-700">Docker</span>
+                <span className="font-medium text-white">Docker</span>
               </div>
-              <div className="bg-white rounded-xl shadow-md p-6 flex flex-col items-center justify-center transform hover:scale-105 transition-transform hover:shadow-lg">
+              <div className="bg-white/10 rounded-xl shadow-md p-6 flex flex-col items-center justify-center transform hover:scale-105 transition-transform hover:shadow-lg">
                 <i className="fab fa-laravel text-4xl text-red-500 mb-3"></i>
-                <span className="font-medium text-gray-700">Laravel</span>
+                <span className="font-medium text-white">Laravel</span>
               </div>
             </div>
           </div>

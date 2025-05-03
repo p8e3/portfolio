@@ -17,10 +17,10 @@
 body {
   font-family: 'Inter', sans-serif;
   min-height: 100vh;
-  background: rgb(var(--background-rgb));
+  background: #000;
   cursor: default;
   line-height: 1.5;
-  color: var(--text-gray);
+  color: #fff;
 }
 
 #background {
@@ -51,7 +51,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 1rem;
   font-weight: 600;
   line-height: 1.2;
-  color: #1F2937;
+  color: #fff;
 }
 
 h1 {
