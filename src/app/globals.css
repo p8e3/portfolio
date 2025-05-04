@@ -404,6 +404,12 @@ p {
   color: #EF4444;
 }
 
+html, body {
+  overscroll-behavior: none;
+  touch-action: pan-y;
+  height: 100%;
+}
+
 /* Custom components */
 .name-title {
   background: linear-gradient(120deg, var(--primary-light), var(--primary-color));

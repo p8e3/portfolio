@@ -122,7 +122,7 @@ export default function Home() {
             {/* Key Skills */}
             <div className="mt-12 mb-8">
               <h2 className="text-3xl font-bold mb-8 text-blue-300 text-center shadow-[0_0_15px_rgba(59,130,246,0.7)]">Key Skills</h2>
-              <div className="grid grid-cols-3 gap-4 max-w-3xl mx-auto">
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
                 <div className="bg-blue-900/80 rounded-lg border border-blue-700 shadow-lg p-4 h-[120px] flex flex-col items-center justify-center transition-all hover:bg-blue-800/90 hover:shadow-blue-700/30 hover:shadow-xl">
                   <i className="fas fa-code text-3xl text-blue-300 mb-2"></i>
                   <span className="font-semibold text-white text-center">Full-stack Development</span>
@@ -160,7 +160,7 @@ export default function Home() {
           <div className="p-8 bg-black border-t-2 border-blue-600">
             <h2 className="text-3xl font-bold mb-8 text-blue-300 text-center shadow-[0_0_15px_rgba(59,130,246,0.7)]">Tech Stack</h2>
             
-            <div className="grid grid-cols-3 lg:grid-cols-4 gap-4 max-w-3xl mx-auto">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-3xl mx-auto">
               {/* Frontend */}
               <div className="bg-blue-900/80 rounded-lg border border-blue-700 shadow-lg p-4 h-[120px] flex flex-col items-center justify-center transition-all hover:bg-blue-800/90 hover:shadow-blue-700/30 hover:shadow-xl">
                 <i className="fab fa-react text-3xl text-blue-300 mb-2"></i>

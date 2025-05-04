@@ -298,7 +298,7 @@ export function Waves({
       updateMouse(e.pageX, e.pageY);
     }
     function onTouchMove(e: TouchEvent) {
-      e.preventDefault();
+      // Убираем preventDefault, чтобы не блокировать нативный скролл
       const touch = e.touches[0];
       updateMouse(touch.clientX, touch.clientY);
     }
@@ -372,6 +372,8 @@ export function Waves({
           display: 'block',
           width: '100vw',
           height: '100vh',
+          pointerEvents: 'none',
+          touchAction: 'none'
         }}
       />
     </div>
