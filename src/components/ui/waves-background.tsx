@@ -279,59 +279,56 @@ export function Waves({
       const d = Math.hypot(dx, dy)
       mouse.v = d
       mouse.vs += (d - mouse.vs) * 0.1
-      mouse.vs = Math.min(100, mouse.vs)
-      mouse.lx = mouse.x
-      mouse.ly = mouse.y
-      mouse.a = Math.atan2(dy, dx)
 
+      const container = containerRef.current;
       if (container) {
-        container.style.setProperty("--x", `${mouse.sx}px`)
-        container.style.setProperty("--y", `${mouse.sy}px`)
+        container.style.setProperty("--x", `${mouse.sx}px`);
+        container.style.setProperty("--y", `${mouse.sy}px`);
       }
 
-      movePoints(t)
-      drawLines()
-      requestAnimationFrame(tick)
+      movePoints(t);
+      drawLines();
+      requestAnimationFrame(tick);
     }
 
     function onResize() {
-      setSize()
-      setLines()
+      setSize();
+      setLines();
     }
     function onMouseMove(e: MouseEvent) {
-      updateMouse(e.pageX, e.pageY)
+      updateMouse(e.pageX, e.pageY);
     }
     function onTouchMove(e: TouchEvent) {
-      e.preventDefault()
-      const touch = e.touches[0]
-      updateMouse(touch.clientX, touch.clientY)
+      e.preventDefault();
+      const touch = e.touches[0];
+      updateMouse(touch.clientX, touch.clientY);
     }
     function updateMouse(x: number, y: number) {
-      const mouse = mouseRef.current
-      const b = boundingRef.current
-      mouse.x = x - b.left
-      mouse.y = y - b.top + window.scrollY
+      const mouse = mouseRef.current;
+      const b = boundingRef.current;
+      mouse.x = x - b.left;
+      mouse.y = y - b.top + window.scrollY;
       if (!mouse.set) {
-        mouse.sx = mouse.x
-        mouse.sy = mouse.y
-        mouse.lx = mouse.x
-        mouse.ly = mouse.y
-        mouse.set = true
+        mouse.sx = mouse.x;
+        mouse.sy = mouse.y;
+        mouse.lx = mouse.x;
+        mouse.ly = mouse.y;
+        mouse.set = true;
       }
     }
 
-    setSize()
-    setLines()
-    requestAnimationFrame(tick)
-    window.addEventListener("resize", onResize)
-    window.addEventListener("mousemove", onMouseMove)
-    window.addEventListener("touchmove", onTouchMove, { passive: false })
+    setSize();
+    setLines();
+    requestAnimationFrame(tick);
+    window.addEventListener("resize", onResize);
+    window.addEventListener("mousemove", onMouseMove);
+    window.addEventListener("touchmove", onTouchMove, { passive: false });
 
     return () => {
-      window.removeEventListener("resize", onResize)
-      window.removeEventListener("mousemove", onMouseMove)
-      window.removeEventListener("touchmove", onTouchMove)
-    }
+      window.removeEventListener("resize", onResize);
+      window.removeEventListener("mousemove", onMouseMove);
+      window.removeEventListener("touchmove", onTouchMove);
+    };
   }, [
     lineColor,
     backgroundColor,
@@ -344,31 +341,42 @@ export function Waves({
     maxCursorMove,
     xGap,
     yGap,
-  ])
+    className,
+  ]);
 
   return (
     <div
       ref={containerRef}
       style={{
         backgroundColor,
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        width: '100vw',
+        height: '100vh',
+        overflow: 'hidden',
+        zIndex: -10,
+        pointerEvents: 'none',
       }}
-      className={cn(
-        "absolute top-0 left-0 w-full h-full overflow-hidden",
-        className,
-      )}
+      className={className}
     >
       <div
-        className={cn(
-          "absolute top-0 left-0 rounded-full",
-          "w-2 h-2 bg-foreground/10",
-        )}
+        className="absolute top-0 left-0 rounded-full w-2 h-2 bg-foreground/10"
         style={{
-          transform:
-            "translate3d(calc(var(--x) - 50%), calc(var(--y) - 50%), 0)",
+          transform: `translate3d(calc(var(--x, 0px) - 50%), calc(var(--y, 0px) - 50%), 0)`,
           willChange: "transform",
         }}
+      ></div>
+      <canvas
+        ref={canvasRef}
+        style={{
+          display: 'block',
+          width: '100vw',
+          height: '100vh',
+        }}
       />
-      <canvas ref={canvasRef} className="block w-full h-full" />
     </div>
-  )
+  );
 }
+
+export default Waves;

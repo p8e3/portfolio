@@ -15,7 +15,10 @@
 }
 
 html, body {
+  margin: 0;
+  padding: 0;
   min-height: 100vh;
+  height: 100vh;
   width: 100vw;
   overflow-x: hidden;
 }
@@ -25,6 +28,8 @@ body {
   cursor: default;
   line-height: 1.5;
   color: #fff;
+  overflow-x: hidden;
+  position: relative;
 }
 
 
@@ -65,9 +70,10 @@ body {
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
   margin-bottom: 1rem;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.2;
   color: #fff;
+  text-shadow: 0 0 10px rgba(59, 130, 246, 0.7), 0 0 5px rgba(0, 0, 0, 1);
 }
 
 h1 {

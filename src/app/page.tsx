@@ -1,14 +1,15 @@
 "use client";
 
 import Image from "next/image";
-
-
 import { Waves } from "@/components/ui/waves-background";
 
 export default function Home() {
   return (
     <>
-      <div id="background" className="fixed top-0 left-0 w-full h-full z-[-1]">
+      {/* Глобальные стили применяются через CSS файлы */}
+      
+      {/* Фон с волнами на весь экран */}
+      <div className="fixed inset-0 -z-10 overflow-hidden w-screen h-screen" id="waves-background">
         <Waves 
           lineColor="rgba(0, 114, 255, 0.2)"
           backgroundColor="#000000"
@@ -23,9 +24,9 @@ export default function Home() {
           yGap={32}
         />
       </div>
-      <div className="min-h-screen h-full flex flex-col p-4">
-        <div className="w-full max-w-4xl rounded-xl shadow-xl text-white">
-          <div className="text-white text-center bg-gradient-to-r from-blue-100 to-blue-200 rounded-t-xl relative">
+      <div className="min-h-screen h-full flex flex-col items-center justify-center p-4 z-10 relative">
+        <div className="w-full max-w-4xl rounded-xl shadow-[0_0_30px_rgba(0,0,0,0.8)] bg-black border-blue-500 text-white mx-auto">
+          <div className="text-white text-center bg-gradient-to-r from-blue-800 to-blue-900 rounded-t-xl relative">
             {/* Decorative elements */}
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-400 to-blue-600"></div>
             <div className="absolute bottom-0 left-0 w-full h-10 bg-gradient-to-t from-white to-transparent"></div>
@@ -49,13 +50,13 @@ export default function Home() {
               
               {/* Info and contact section */}
               <div className="flex flex-col items-center md:items-start">
-                <h1 className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 text-transparent bg-clip-text mb-1">
+                <h1 className="text-4xl font-bold text-white mb-1 drop-shadow-md">
                   Web Developer
                 </h1>
                 
                 {/* Experience badges */}
                 <div className="flex items-center justify-center mt-1 mb-6">
-                  <div className="bg-blue-600 text-white px-4 py-1 rounded-full font-semibold flex items-center shadow-md">
+                  <div className="bg-blue-800 text-white px-4 py-1 rounded-full font-semibold flex items-center shadow-md">
                     <span className="mr-2">12+</span>
                     <div className="h-6 w-px bg-blue-300"></div>
                     <span className="ml-2">years of experience</span>
@@ -104,128 +105,132 @@ export default function Home() {
           </div>
           
           {/* Rest of the content remains the same */}
-          <div className="bg-white/10 p-8">
-            <h2 className="text-2xl font-bold mb-6 text-white text-center">About me</h2>
-            <div className="text-white space-y-4 max-w-2xl mx-auto">
-              <p>
-                Full-stack developer with over 12 years of experience creating web applications for businesses. I specialize in React, Node.js, and modern JavaScript frameworks.
+          <div className="bg-black p-8 rounded-b-xl">
+            <h2 className="text-3xl font-bold mb-6 text-blue-300 text-center shadow-[0_0_15px_rgba(59,130,246,0.7)]">About me</h2>
+            <div className="text-blue-100 font-medium space-y-6 max-w-2xl mx-auto">
+              <p className="text-xl bg-black p-4 border-blue-500 text-cyan-200 font-semibold shadow-[0_0_15px_rgba(0,0,0,0.8)]" style={{textShadow: '0 0 5px rgba(6, 182, 212, 0.5)'}}>
+                Full-stack developer with over 12 years of experience. I professionally work with React, Vue.js, Node.js, and Angular to create modern web applications of any complexity.
               </p>
-              <p>
-                I take pride in building robust, scalable applications with clean code and intuitive user interfaces. My goal is to create solutions that not only meet technical requirements but also provide an exceptional user experience.
+              <p className="text-xl bg-black p-4 border-blue-500 text-cyan-200 font-semibold shadow-[0_0_15px_rgba(0,0,0,0.8)]" style={{textShadow: '0 0 5px rgba(6, 182, 212, 0.5)'}}>
+                I have deep expertise in backend development using Node.js, PHP, and Python. I successfully work with MongoDB and MySQL databases, and implement Docker to optimize development and deployment processes.
               </p>
-              <p>
-                In addition to my technical skills, I have a strong background in project management and team leadership, allowing me to effectively coordinate development efforts and ensure successful delivery.
+              <p className="text-xl bg-black p-4 border-blue-500 text-cyan-200 font-semibold shadow-[0_0_15px_rgba(0,0,0,0.8)]" style={{textShadow: '0 0 5px rgba(6, 182, 212, 0.5)'}}>
+                My specialized expertise includes developing Telegram bots using Aiogram and integrating automated solutions for businesses. I possess strong skills in team leadership and project management, which allows me to successfully achieve set goals.
               </p>
             </div>
 
             {/* Key Skills */}
-            <div className="mt-8 mb-6">
-              <h2 className="text-2xl font-bold mb-8 text-white text-center">Key Skills</h2>
-              
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
-                <div className="bg-white/10 rounded-xl shadow-md p-6 flex flex-col items-center justify-center transform hover:scale-105 transition-transform hover:shadow-lg">
-                  <i className="fas fa-code text-4xl text-blue-500 mb-3"></i>
-                  <span className="font-medium text-white">Full-stack Development</span>
+            <div className="mt-12 mb-8">
+              <h2 className="text-3xl font-bold mb-8 text-blue-300 text-center shadow-[0_0_15px_rgba(59,130,246,0.7)]">Key Skills</h2>
+              <div className="grid grid-cols-3 gap-4 max-w-3xl mx-auto">
+                <div className="bg-blue-900/80 rounded-lg border border-blue-700 shadow-lg p-4 h-[120px] flex flex-col items-center justify-center transition-all hover:bg-blue-800/90 hover:shadow-blue-700/30 hover:shadow-xl">
+                  <i className="fas fa-code text-3xl text-blue-300 mb-2"></i>
+                  <span className="font-semibold text-white text-center">Full-stack Development</span>
                 </div>
-                <div className="bg-white/10 rounded-xl shadow-md p-6 flex flex-col items-center justify-center transform hover:scale-105 transition-transform hover:shadow-lg">
-                  <i className="fas fa-mobile-alt text-4xl text-green-500 mb-3"></i>
-                  <span className="font-medium text-white">Responsive Design</span>
+
+                <div className="bg-green-900/80 rounded-lg border border-green-700 shadow-lg p-4 h-[120px] flex flex-col items-center justify-center transition-all hover:bg-green-800/90 hover:shadow-green-700/30 hover:shadow-xl">
+                  <i className="fas fa-mobile-alt text-3xl text-green-300 mb-2"></i>
+                  <span className="font-semibold text-white text-center">Responsive Design</span>
                 </div>
-                <div className="bg-white/10 rounded-xl shadow-md p-6 flex flex-col items-center justify-center transform hover:scale-105 transition-transform hover:shadow-lg">
-                  <i className="fas fa-plug text-4xl text-indigo-500 mb-3"></i>
-                  <span className="font-medium text-white">API Development</span>
+
+                <div className="bg-indigo-900/80 rounded-lg border border-indigo-700 shadow-lg p-4 h-[120px] flex flex-col items-center justify-center transition-all hover:bg-indigo-800/90 hover:shadow-indigo-700/30 hover:shadow-xl">
+                  <i className="fas fa-plug text-3xl text-indigo-300 mb-2"></i>
+                  <span className="font-semibold text-white text-center">API Development</span>
                 </div>
-                <div className="bg-white/10 rounded-xl shadow-md p-6 flex flex-col items-center justify-center transform hover:scale-105 transition-transform hover:shadow-lg">
-                  <i className="fas fa-pencil-ruler text-4xl text-purple-500 mb-3"></i>
-                  <span className="font-medium text-white">UI/UX Design</span>
+
+                <div className="bg-purple-900/80 rounded-lg border border-purple-700 shadow-lg p-4 h-[120px] flex flex-col items-center justify-center transition-all hover:bg-purple-800/90 hover:shadow-purple-700/30 hover:shadow-xl">
+                  <i className="fas fa-pencil-ruler text-3xl text-purple-300 mb-2"></i>
+                  <span className="font-semibold text-white text-center">UI/UX Design</span>
                 </div>
-                <div className="bg-white/10 rounded-xl shadow-md p-6 flex flex-col items-center justify-center transform hover:scale-105 transition-transform hover:shadow-lg">
-                  <i className="fas fa-users text-4xl text-yellow-500 mb-3"></i>
-                  <span className="font-medium text-white">Team Leadership</span>
+
+                <div className="bg-yellow-900/80 rounded-lg border border-yellow-700 shadow-lg p-4 h-[120px] flex flex-col items-center justify-center transition-all hover:bg-yellow-800/90 hover:shadow-yellow-700/30 hover:shadow-xl">
+                  <i className="fas fa-users text-3xl text-yellow-300 mb-2"></i>
+                  <span className="font-semibold text-white text-center">Team Leadership</span>
                 </div>
-                <div className="bg-white/10 rounded-xl shadow-md p-6 flex flex-col items-center justify-center transform hover:scale-105 transition-transform hover:shadow-lg">
-                  <i className="fas fa-tasks text-4xl text-red-500 mb-3"></i>
-                  <span className="font-medium text-white">Project Management</span>
+
+                <div className="bg-red-900/80 rounded-lg border border-red-700 shadow-lg p-4 h-[120px] flex flex-col items-center justify-center transition-all hover:bg-red-800/90 hover:shadow-red-700/30 hover:shadow-xl">
+                  <i className="fas fa-tasks text-3xl text-red-300 mb-2"></i>
+                  <span className="font-semibold text-white text-center">Project Management</span>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Tech Stack */}
-          <div className="p-8 bg-white/10">
-            <h2 className="text-2xl font-bold mb-8 text-white text-center">Tech Stack</h2>
+          <div className="p-8 bg-black border-t-2 border-blue-600">
+            <h2 className="text-3xl font-bold mb-8 text-blue-300 text-center shadow-[0_0_15px_rgba(59,130,246,0.7)]">Tech Stack</h2>
             
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-3xl mx-auto">
+            <div className="grid grid-cols-3 lg:grid-cols-4 gap-4 max-w-3xl mx-auto">
               {/* Frontend */}
-              <div className="bg-white/10 rounded-xl shadow-md p-6 flex flex-col items-center justify-center transform hover:scale-105 transition-transform hover:shadow-lg">
-                <i className="fab fa-react text-4xl text-blue-500 mb-3"></i>
-                <span className="font-medium text-white">React</span>
+              <div className="bg-blue-900/80 rounded-lg border border-blue-700 shadow-lg p-4 h-[120px] flex flex-col items-center justify-center transition-all hover:bg-blue-800/90 hover:shadow-blue-700/30 hover:shadow-xl">
+                <i className="fab fa-react text-3xl text-blue-300 mb-2"></i>
+                <span className="font-semibold text-white text-center">React</span>
               </div>
-              <div className="bg-white/10 rounded-xl shadow-md p-6 flex flex-col items-center justify-center transform hover:scale-105 transition-transform hover:shadow-lg">
-                <i className="fab fa-vuejs text-4xl text-green-500 mb-3"></i>
-                <span className="font-medium text-white">Vue.js</span>
+              <div className="bg-green-900/80 rounded-lg border border-green-700 shadow-lg p-4 h-[120px] flex flex-col items-center justify-center transition-all hover:bg-green-800/90 hover:shadow-green-700/30 hover:shadow-xl">
+                <i className="fab fa-vuejs text-3xl text-green-300 mb-2"></i>
+                <span className="font-semibold text-white text-center">Vue.js</span>
               </div>
-              <div className="bg-white/10 rounded-xl shadow-md p-6 flex flex-col items-center justify-center transform hover:scale-105 transition-transform hover:shadow-lg">
-                <i className="fab fa-js text-4xl text-yellow-500 mb-3"></i>
-                <span className="font-medium text-white">JavaScript</span>
+              <div className="bg-yellow-900/80 rounded-lg border border-yellow-700 shadow-lg p-4 h-[120px] flex flex-col items-center justify-center transition-all hover:bg-yellow-800/90 hover:shadow-yellow-700/30 hover:shadow-xl">
+                <i className="fab fa-js text-3xl text-yellow-300 mb-2"></i>
+                <span className="font-semibold text-white text-center">JavaScript</span>
               </div>
-              <div className="bg-white/10 rounded-xl shadow-md p-6 flex flex-col items-center justify-center transform hover:scale-105 transition-transform hover:shadow-lg">
-                <i className="fab fa-angular text-4xl text-red-600 mb-3"></i>
-                <span className="font-medium text-white">Angular</span>
+              <div className="bg-red-900/80 rounded-lg border border-red-700 shadow-lg p-4 h-[120px] flex flex-col items-center justify-center transition-all hover:bg-red-800/90 hover:shadow-red-700/30 hover:shadow-xl">
+                <i className="fab fa-angular text-3xl text-red-300 mb-2"></i>
+                <span className="font-semibold text-white text-center">Angular</span>
               </div>
 
               {/* Backend & CMS */}
-              <div className="bg-white/10 rounded-xl shadow-md p-6 flex flex-col items-center justify-center transform hover:scale-105 transition-transform hover:shadow-lg">
-                <i className="fab fa-php text-4xl text-indigo-500 mb-3"></i>
-                <span className="font-medium text-white">PHP</span>
+              <div className="bg-indigo-900/80 rounded-lg border border-indigo-700 shadow-lg p-4 h-[120px] flex flex-col items-center justify-center transition-all hover:bg-indigo-800/90 hover:shadow-indigo-700/30 hover:shadow-xl">
+                <i className="fab fa-php text-3xl text-indigo-300 mb-2"></i>
+                <span className="font-semibold text-white text-center">PHP</span>
               </div>
-              <div className="rounded-xl shadow-md p-6 flex flex-col items-center justify-center transform hover:scale-105 transition-transform hover:shadow-lg">
-                <i className="fab fa-wordpress text-4xl text-blue-600 mb-3"></i>
-                <span className="font-medium text-white">WordPress</span>
+              <div className="bg-blue-900/80 rounded-lg border border-blue-700 shadow-lg p-4 h-[120px] flex flex-col items-center justify-center transition-all hover:bg-blue-800/90 hover:shadow-blue-700/30 hover:shadow-xl">
+                <i className="fab fa-wordpress text-3xl text-blue-300 mb-2"></i>
+                <span className="font-semibold text-white text-center">WordPress</span>
               </div>
-              <div className="rounded-xl shadow-md p-6 flex flex-col items-center justify-center transform hover:scale-105 transition-transform hover:shadow-lg">
-                <i className="fas fa-shopping-cart text-4xl text-white mb-3"></i>
-                <span className="font-medium text-white">Bitrix</span>
+              <div className="bg-orange-900/80 rounded-lg border border-orange-700 shadow-lg p-4 h-[120px] flex flex-col items-center justify-center transition-all hover:bg-orange-800/90 hover:shadow-orange-700/30 hover:shadow-xl">
+                <i className="fas fa-shopping-cart text-3xl text-orange-300 mb-2"></i>
+                <span className="font-semibold text-white text-center">Bitrix</span>
               </div>
-              <div className="rounded-xl shadow-md p-6 flex flex-col items-center justify-center transform hover:scale-105 transition-transform hover:shadow-lg">
-                <i className="fab fa-node-js text-4xl text-green-600 mb-3"></i>
-                <span className="font-medium text-white">Node.js</span>
+              <div className="bg-green-900/80 rounded-lg border border-green-700 shadow-lg p-4 h-[120px] flex flex-col items-center justify-center transition-all hover:bg-green-800/90 hover:shadow-green-700/30 hover:shadow-xl">
+                <i className="fab fa-node-js text-3xl text-green-300 mb-2"></i>
+                <span className="font-semibold text-white text-center">Node.js</span>
               </div>
               
               {/* Python & Automation */}
-              <div className="bg-white/10 rounded-xl shadow-md p-6 flex flex-col items-center justify-center transform hover:scale-105 transition-transform hover:shadow-lg">
-                <i className="fab fa-python text-4xl text-blue-500 mb-3"></i>
-                <span className="font-medium text-white">Python</span>
+              <div className="bg-blue-900/80 rounded-lg border border-blue-700 shadow-lg p-4 h-[120px] flex flex-col items-center justify-center transition-all hover:bg-blue-800/90 hover:shadow-blue-700/30 hover:shadow-xl">
+                <i className="fab fa-python text-3xl text-blue-300 mb-2"></i>
+                <span className="font-semibold text-white text-center">Python</span>
               </div>
-              <div className="bg-white/10 rounded-xl shadow-md p-6 flex flex-col items-center justify-center transform hover:scale-105 transition-transform hover:shadow-lg">
-                <i className="fab fa-telegram text-4xl text-[#0088cc] mb-3"></i>
-                <span className="font-medium text-white">Telegram Bots</span>
+              <div className="bg-cyan-900/80 rounded-lg border border-cyan-700 shadow-lg p-4 h-[120px] flex flex-col items-center justify-center transition-all hover:bg-cyan-800/90 hover:shadow-cyan-700/30 hover:shadow-xl">
+                <i className="fab fa-telegram text-3xl text-cyan-300 mb-2"></i>
+                <span className="font-semibold text-white text-center">Telegram Bots</span>
               </div>
-              <div className="bg-white/10 rounded-xl shadow-md p-6 flex flex-col items-center justify-center transform hover:scale-105 transition-transform hover:shadow-lg">
-                <i className="fas fa-robot text-4xl text-purple-600 mb-3"></i>
-                <span className="font-medium text-white">Aiogram</span>
+              <div className="bg-purple-900/80 rounded-lg border border-purple-700 shadow-lg p-4 h-[120px] flex flex-col items-center justify-center transition-all hover:bg-purple-800/90 hover:shadow-purple-700/30 hover:shadow-xl">
+                <i className="fas fa-robot text-3xl text-purple-300 mb-2"></i>
+                <span className="font-semibold text-white text-center">Aiogram</span>
               </div>
-              <div className="bg-white/10 rounded-xl shadow-md p-6 flex flex-col items-center justify-center transform hover:scale-105 transition-transform hover:shadow-lg">
-                <i className="fas fa-cogs text-4xl text-white mb-3"></i>
-                <span className="font-medium text-white">Automation</span>
+              <div className="bg-gray-900/80 rounded-lg border border-gray-700 shadow-lg p-4 h-[120px] flex flex-col items-center justify-center transition-all hover:bg-gray-800/90 hover:shadow-gray-700/30 hover:shadow-xl">
+                <i className="fas fa-cogs text-3xl text-gray-300 mb-2"></i>
+                <span className="font-semibold text-white text-center">Automation</span>
               </div>
               
               {/* Database & Tools */}
-              <div className="bg-white/10 rounded-xl shadow-md p-6 flex flex-col items-center justify-center transform hover:scale-105 transition-transform hover:shadow-lg">
-                <i className="fas fa-database text-4xl text-blue-400 mb-3"></i>
-                <span className="font-medium text-white">MySQL</span>
+              <div className="bg-blue-900/80 rounded-lg border border-blue-700 shadow-lg p-4 h-[120px] flex flex-col items-center justify-center transition-all hover:bg-blue-800/90 hover:shadow-blue-700/30 hover:shadow-xl">
+                <i className="fas fa-database text-3xl text-blue-300 mb-2"></i>
+                <span className="font-semibold text-white text-center">MySQL</span>
               </div>
-              <div className="bg-white/10 rounded-xl shadow-md p-6 flex flex-col items-center justify-center transform hover:scale-105 transition-transform hover:shadow-lg">
-                <i className="fas fa-database text-4xl text-blue-700 mb-3"></i>
-                <span className="font-medium text-white">MongoDB</span>
+              <div className="bg-green-900/80 rounded-lg border border-green-700 shadow-lg p-4 h-[120px] flex flex-col items-center justify-center transition-all hover:bg-green-800/90 hover:shadow-green-700/30 hover:shadow-xl">
+                <i className="fas fa-database text-3xl text-green-300 mb-2"></i>
+                <span className="font-semibold text-white text-center">MongoDB</span>
               </div>
-              <div className="bg-white/10 rounded-xl shadow-md p-6 flex flex-col items-center justify-center transform hover:scale-105 transition-transform hover:shadow-lg">
-                <i className="fab fa-docker text-4xl text-blue-500 mb-3"></i>
-                <span className="font-medium text-white">Docker</span>
+              <div className="bg-blue-900/80 rounded-lg border border-blue-700 shadow-lg p-4 h-[120px] flex flex-col items-center justify-center transition-all hover:bg-blue-800/90 hover:shadow-blue-700/30 hover:shadow-xl">
+                <i className="fab fa-docker text-3xl text-blue-300 mb-2"></i>
+                <span className="font-semibold text-white text-center">Docker</span>
               </div>
-              <div className="bg-white/10 rounded-xl shadow-md p-6 flex flex-col items-center justify-center transform hover:scale-105 transition-transform hover:shadow-lg">
-                <i className="fab fa-laravel text-4xl text-red-500 mb-3"></i>
-                <span className="font-medium text-white">Laravel</span>
+              <div className="bg-red-900/80 rounded-lg border border-red-700 shadow-lg p-4 h-[120px] flex flex-col items-center justify-center transition-all hover:bg-red-800/90 hover:shadow-red-700/30 hover:shadow-xl">
+                <i className="fab fa-laravel text-3xl text-red-300 mb-2"></i>
+                <span className="font-semibold text-white text-center">Laravel</span>
               </div>
             </div>
           </div>
