@@ -1,10 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  output: 'export',
-  images: { unoptimized: true },
-  basePath: "",
-  trailingSlash: true,
+  // Vercel SSR build (no static export). This enables metadata routes like opengraph-image, icon, robots, etc.
 };
 
 export default nextConfig;

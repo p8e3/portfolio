@@ -7,10 +7,7 @@
   "theme_color": "#000000",
   "description": "Full‑stack web developer portfolio: React, Vue.js, Node.js, Angular, Python, PHP, Docker, MySQL, MongoDB.",
   "icons": [
-    {
-      "src": "/favicon.ico",
-      "sizes": "48x48 72x72 96x96 128x128 256x256",
-      "type": "image/x-icon"
-    }
+    { "src": "/icon-192", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "/icon-512", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
   ]
 }
