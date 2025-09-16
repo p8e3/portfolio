@@ -1,0 +1,16 @@
+{
+  "name": "p8e3 Portfolio",
+  "short_name": "p8e3",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "description": "Full‑stack web developer portfolio: React, Vue.js, Node.js, Angular, Python, PHP, Docker, MySQL, MongoDB.",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "48x48 72x72 96x96 128x128 256x256",
+      "type": "image/x-icon"
+    }
+  ]
+}
