@@ -4,6 +4,7 @@ import "./globals.css";
 
 import { Preloader } from "@/components/preloader";
 import { ThemeProvider } from "@/components/theme-provider";
+import ThemeToggle from "@/components/ui/theme-toggle";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -22,13 +23,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
       </head>
-      <body className={`${inter.variable} antialiased bg-black text-white`}>
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+      <body className={`${inter.variable} antialiased`}>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <Preloader />
+          <ThemeToggle />
           {children}
         </ThemeProvider>
       </body>
