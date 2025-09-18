@@ -1,80 +1,91 @@
 export default function TechStackSection() {
-  return (
-    <div className="w-full max-w-4xl mx-auto p-8">
-      <h2 className="text-3xl font-bold mb-8 text-blue-300 text-center shadow-[0_0_15px_rgba(59,130,246,0.7)]">Tech Stack</h2>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-3xl mx-auto">
-        {/* Frontend */}
-        <div className="bg-blue-900/80 rounded-lg border border-blue-700 shadow-lg p-4 h-[120px] flex flex-col items-center justify-center transition-all hover:bg-blue-800/90 hover:shadow-blue-700/30 hover:shadow-xl">
-          <i className="fab fa-react text-3xl text-blue-300 mb-2"></i>
-          <span className="font-semibold text-white text-center">React</span>
-        </div>
-        <div className="bg-green-900/80 rounded-lg border border-green-700 shadow-lg p-4 h-[120px] flex flex-col items-center justify-center transition-all hover:bg-green-800/90 hover:shadow-green-700/30 hover:shadow-xl">
-          <i className="fab fa-vuejs text-3xl text-green-300 mb-2"></i>
-          <span className="font-semibold text-white text-center">Vue.js</span>
-        </div>
-        <div className="bg-yellow-900/80 rounded-lg border border-yellow-700 shadow-lg p-4 h-[120px] flex flex-col items-center justify-center transition-all hover:bg-yellow-800/90 hover:shadow-yellow-700/30 hover:shadow-xl">
-          <i className="fab fa-js text-3xl text-yellow-300 mb-2"></i>
-          <span className="font-semibold text-white text-center">JavaScript</span>
-        </div>
-        <div className="bg-red-900/80 rounded-lg border border-red-700 shadow-lg p-4 h-[120px] flex flex-col items-center justify-center transition-all hover:bg-red-800/90 hover:shadow-red-700/30 hover:shadow-xl">
-          <i className="fab fa-angular text-3xl text-red-300 mb-2"></i>
-          <span className="font-semibold text-white text-center">Angular</span>
-        </div>
+  const items = [
+    // Frontend
+    { name: "React", slug: "react", href: "https://reactjs.org/" },
+    { name: "Next.js", slug: "nextdotjs", href: "https://nextjs.org/" },
+    { name: "TailwindCSS", slug: "tailwindcss", href: "https://tailwindcss.com/" },
+    { name: "JavaScript", slug: "javascript", href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
+    { name: "TypeScript", slug: "typescript", href: "https://www.typescriptlang.org/" },
+    { name: "Vite", slug: "vite", href: "https://vitejs.dev/" },
+    { name: "Webpack", slug: "webpack", href: "https://webpack.js.org/" },
+    { name: "Rollup", slug: "rollupdotjs", href: "https://rollupjs.org/" },
+    { name: "Astro", slug: "astro", href: "https://astro.build/" },
 
-        {/* Backend & CMS */}
-        <div className="bg-indigo-900/80 rounded-lg border border-indigo-700 shadow-lg p-4 h-[120px] flex flex-col items-center justify-center transition-all hover:bg-indigo-800/90 hover:shadow-indigo-700/30 hover:shadow-xl">
-          <i className="fab fa-php text-3xl text-indigo-300 mb-2"></i>
-          <span className="font-semibold text-white text-center">PHP</span>
-        </div>
-        <div className="bg-blue-900/80 rounded-lg border border-blue-700 shadow-lg p-4 h-[120px] flex flex-col items-center justify-center transition-all hover:bg-blue-800/90 hover:shadow-blue-700/30 hover:shadow-xl">
-          <i className="fab fa-wordpress text-3xl text-blue-300 mb-2"></i>
-          <span className="font-semibold text-white text-center">WordPress</span>
-        </div>
-        <div className="bg-orange-900/80 rounded-lg border border-orange-700 shadow-lg p-4 h-[120px] flex flex-col items-center justify-center transition-all hover:bg-orange-800/90 hover:shadow-orange-700/30 hover:shadow-xl">
-          <i className="fas fa-shopping-cart text-3xl text-orange-300 mb-2"></i>
-          <span className="font-semibold text-white text-center">Bitrix</span>
-        </div>
-        <div className="bg-green-900/80 rounded-lg border border-green-700 shadow-lg p-4 h-[120px] flex flex-col items-center justify-center transition-all hover:bg-green-800/90 hover:shadow-green-700/30 hover:shadow-xl">
-          <i className="fab fa-node-js text-3xl text-green-300 mb-2"></i>
-          <span className="font-semibold text-white text-center">Node.js</span>
-        </div>
-        
-        {/* Python & Automation */}
-        <div className="bg-blue-900/80 rounded-lg border border-blue-700 shadow-lg p-4 h-[120px] flex flex-col items-center justify-center transition-all hover:bg-blue-800/90 hover:shadow-blue-700/30 hover:shadow-xl">
-          <i className="fab fa-python text-3xl text-blue-300 mb-2"></i>
-          <span className="font-semibold text-white text-center">Python</span>
-        </div>
-        <div className="bg-cyan-900/80 rounded-lg border border-cyan-700 shadow-lg p-4 h-[120px] flex flex-col items-center justify-center transition-all hover:bg-cyan-800/90 hover:shadow-cyan-700/30 hover:shadow-xl">
-          <i className="fab fa-telegram text-3xl text-cyan-300 mb-2"></i>
-          <span className="font-semibold text-white text-center">Telegram Bots</span>
-        </div>
-        <div className="bg-purple-900/80 rounded-lg border border-purple-700 shadow-lg p-4 h-[120px] flex flex-col items-center justify-center transition-all hover:bg-purple-800/90 hover:shadow-purple-700/30 hover:shadow-xl">
-          <i className="fas fa-robot text-3xl text-purple-300 mb-2"></i>
-          <span className="font-semibold text-white text-center">Aiogram</span>
-        </div>
-        <div className="bg-gray-900/80 rounded-lg border border-gray-700 shadow-lg p-4 h-[120px] flex flex-col items-center justify-center transition-all hover:bg-gray-800/90 hover:shadow-gray-700/30 hover:shadow-xl">
-          <i className="fas fa-cogs text-3xl text-gray-300 mb-2"></i>
-          <span className="font-semibold text-white text-center">Automation</span>
-        </div>
-        
-        {/* Database & Tools */}
-        <div className="bg-blue-900/80 rounded-lg border border-blue-700 shadow-lg p-4 h-[120px] flex flex-col items-center justify-center transition-all hover:bg-blue-800/90 hover:shadow-blue-700/30 hover:shadow-xl">
-          <i className="fas fa-database text-3xl text-blue-300 mb-2"></i>
-          <span className="font-semibold text-white text-center">MySQL</span>
-        </div>
-        <div className="bg-green-900/80 rounded-lg border border-green-700 shadow-lg p-4 h-[120px] flex flex-col items-center justify-center transition-all hover:bg-green-800/90 hover:shadow-green-700/30 hover:shadow-xl">
-          <i className="fas fa-database text-3xl text-green-300 mb-2"></i>
-          <span className="font-semibold text-white text-center">MongoDB</span>
-        </div>
-        <div className="bg-blue-900/80 rounded-lg border border-blue-700 shadow-lg p-4 h-[120px] flex flex-col items-center justify-center transition-all hover:bg-blue-800/90 hover:shadow-blue-700/30 hover:shadow-xl">
-          <i className="fab fa-docker text-3xl text-blue-300 mb-2"></i>
-          <span className="font-semibold text-white text-center">Docker</span>
-        </div>
-        <div className="bg-red-900/80 rounded-lg border border-red-700 shadow-lg p-4 h-[120px] flex flex-col items-center justify-center transition-all hover:bg-red-800/90 hover:shadow-red-700/30 hover:shadow-xl">
-          <i className="fab fa-laravel text-3xl text-red-300 mb-2"></i>
-          <span className="font-semibold text-white text-center">Laravel</span>
-        </div>
+    // Backend / Runtime
+    { name: "Node.js", slug: "nodedotjs", href: "https://nodejs.org/" },
+    { name: "Express.js", slug: "express", href: "https://expressjs.com/" },
+    { name: "NestJS", slug: "nestjs", href: "https://nestjs.com/" },
+    { name: "Deno", slug: "deno", href: "https://deno.land/" },
+    { name: "Python", slug: "python", href: "https://www.python.org/" },
+    { name: "Django", slug: "django", href: "https://www.djangoproject.com/" },
+    { name: "Flask", slug: "flask", href: "https://flask.palletsprojects.com/" },
+    { name: "PHP", slug: "php", href: "https://www.php.net/" },
+    { name: "Laravel", slug: "laravel", href: "https://laravel.com/" },
+    { name: "WordPress", slug: "wordpress", href: "https://wordpress.org/" },
+
+    // Databases & ORM
+    { name: "PostgreSQL", slug: "postgresql", href: "https://www.postgresql.org/" },
+    { name: "MySQL", slug: "mysql", href: "https://www.mysql.com/" },
+    { name: "MongoDB", slug: "mongodb", href: "https://www.mongodb.com/" },
+    { name: "Redis", slug: "redis", href: "https://redis.io/" },
+    { name: "Prisma", slug: "prisma", href: "https://www.prisma.io/" },
+    { name: "Sequelize", slug: "sequelize", href: "https://sequelize.org/" },
+
+    // DevOps & Cloud
+    { name: "Docker", slug: "docker", href: "https://www.docker.com/" },
+    { name: "Kubernetes", slug: "kubernetes", href: "https://kubernetes.io/" },
+    { name: "Nginx", slug: "nginx", href: "https://nginx.org/" },
+    { name: "GCP", slug: "googlecloud", href: "https://cloud.google.com/" },
+    { name: "Cloudflare", slug: "cloudflare", href: "https://www.cloudflare.com/" },
+    { name: "Vercel", slug: "vercel", href: "https://vercel.com/" },
+    { name: "Netlify", slug: "netlify", href: "https://www.netlify.com/" },
+
+    // Tools & DX
+    { name: "Git", slug: "git", href: "https://git-scm.com/" },
+    { name: "GitLab", slug: "gitlab", href: "https://gitlab.com/" },
+    { name: "GitHub Actions", slug: "githubactions", href: "https://github.com/features/actions" },
+    { name: "Turborepo", slug: "turborepo", href: "https://turbo.build/" },
+    { name: "NPM", slug: "npm", href: "https://www.npmjs.com/" },
+    { name: "PNPM", slug: "pnpm", href: "https://pnpm.io/" },
+    { name: "Yarn", slug: "yarn", href: "https://yarnpkg.com/" },
+    { name: "ESLint", slug: "eslint", href: "https://eslint.org/" },
+    { name: "Prettier", slug: "prettier", href: "https://prettier.io/" },
+    { name: "Storybook", slug: "storybook", href: "https://storybook.js.org/" },
+    { name: "Jest", slug: "jest", href: "https://jestjs.io/" },
+    { name: "Vitest", slug: "vitest", href: "https://vitest.dev/" },
+    { name: "Cypress", slug: "cypress", href: "https://www.cypress.io/" },
+    { name: "GraphQL", slug: "graphql", href: "https://graphql.org/" },
+    { name: "Telegram Bots", slug: "telegram", href: "https://core.telegram.org/bots" },
+    { name: "Discord.js", slug: "discord", href: "https://discord.js.org/" },
+  ];
+
+  return (
+    <>
+      <h2 className="text-3xl font-bold mb-8 text-center">Tech Stack</h2>
+      <div className="mt-4 flex flex-wrap gap-3 sm:gap-4 sm:justify-center">
+        {items.map((t) => (
+          <a
+            key={t.name}
+            href={t.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-chip
+            className="tech-chip inline-flex cursor-pointer items-center !gap-3 rounded-lg border border-neutral-200/60 bg-white/50 !px-5 !py-2.5 !text-base font-medium text-[color:var(--foreground)] shadow-sm ring-1 ring-transparent transition duration-200 transition-colors hover:bg-black/5 hover:shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400/60 motion-reduce:transition-none dark:border-neutral-800 dark:bg-white/5 dark:hover:border-neutral-700 dark:hover:bg-white/10 whitespace-nowrap min-h-[40px]"
+          >
+            <img
+              alt={`${t.name} logo`}
+              loading="lazy"
+              width={20}
+              height={20}
+              decoding="async"
+              className="size-5 rounded shrink-0"
+              src={`https://cdn.simpleicons.org/${t.slug}`}
+              style={{ color: "transparent" }}
+            />
+            {t.name}
+          </a>
+        ))}
       </div>
-    </div>
+    </>
   );
 }

@@ -62,9 +62,13 @@ export const GradientTracing: React.FC<GradientTracingProps> = ({
         )}
         <defs>
           <motion.linearGradient
+            // Provide initial values to avoid undefined attribute warnings
+            initial={{ x1: 0, x2: width, y1: 0, y2: 0 }}
             animate={{
               x1: [0, width * 2],
               x2: [0, width],
+              y1: 0,
+              y2: 0,
             }}
             transition={{
               duration: animationDuration,

@@ -1,33 +1,29 @@
 export default function KeySkillsSection() {
+  const skills = [
+    { name: "Full‑stack Development", icon: "fas fa-code" },
+    { name: "Responsive Design", icon: "fas fa-mobile-alt" },
+    { name: "API Development", icon: "fas fa-plug" },
+    { name: "UI/UX Design", icon: "fas fa-pencil-ruler" },
+    { name: "Team Leadership", icon: "fas fa-users" },
+    { name: "Project Management", icon: "fas fa-tasks" },
+    { name: "Security & Auth", icon: "fas fa-shield-alt" },
+    { name: "Performance", icon: "fas fa-rocket" },
+  ];
+
   return (
-    <div className="w-full max-w-4xl mx-auto p-8">
-      <h2 className="text-3xl font-bold mb-8 text-blue-300 text-center shadow-[0_0_15px_rgba(59,130,246,0.7)]">Key Skills</h2>
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
-        <div className="bg-blue-900/80 rounded-lg border border-blue-700 shadow-lg p-4 h-[120px] flex flex-col items-center justify-center transition-all hover:bg-blue-800/90 hover:shadow-blue-700/30 hover:shadow-xl">
-          <i className="fas fa-code text-3xl text-blue-300 mb-2"></i>
-          <span className="font-semibold text-white text-center">Full-stack Development</span>
-        </div>
-        <div className="bg-green-900/80 rounded-lg border border-green-700 shadow-lg p-4 h-[120px] flex flex-col items-center justify-center transition-all hover:bg-green-800/90 hover:shadow-green-700/30 hover:shadow-xl">
-          <i className="fas fa-mobile-alt text-3xl text-green-300 mb-2"></i>
-          <span className="font-semibold text-white text-center">Responsive Design</span>
-        </div>
-        <div className="bg-indigo-900/80 rounded-lg border border-indigo-700 shadow-lg p-4 h-[120px] flex flex-col items-center justify-center transition-all hover:bg-indigo-800/90 hover:shadow-indigo-700/30 hover:shadow-xl">
-          <i className="fas fa-plug text-3xl text-indigo-300 mb-2"></i>
-          <span className="font-semibold text-white text-center">API Development</span>
-        </div>
-        <div className="bg-purple-900/80 rounded-lg border border-purple-700 shadow-lg p-4 h-[120px] flex flex-col items-center justify-center transition-all hover:bg-purple-800/90 hover:shadow-purple-700/30 hover:shadow-xl">
-          <i className="fas fa-pencil-ruler text-3xl text-purple-300 mb-2"></i>
-          <span className="font-semibold text-white text-center">UI/UX Design</span>
-        </div>
-        <div className="bg-yellow-900/80 rounded-lg border border-yellow-700 shadow-lg p-4 h-[120px] flex flex-col items-center justify-center transition-all hover:bg-yellow-800/90 hover:shadow-yellow-700/30 hover:shadow-xl">
-          <i className="fas fa-users text-3xl text-yellow-300 mb-2"></i>
-          <span className="font-semibold text-white text-center">Team Leadership</span>
-        </div>
-        <div className="bg-red-900/80 rounded-lg border border-red-700 shadow-lg p-4 h-[120px] flex flex-col items-center justify-center transition-all hover:bg-red-800/90 hover:shadow-red-700/30 hover:shadow-xl">
-          <i className="fas fa-tasks text-3xl text-red-300 mb-2"></i>
-          <span className="font-semibold text-white text-center">Project Management</span>
-        </div>
+    <>
+      <h2 className="text-3xl font-bold mb-8 text-center">Key Skills</h2>
+      <div className="mt-2 flex flex-wrap gap-3 sm:gap-4 sm:justify-center">
+        {skills.map((s) => (
+          <div
+            key={s.name}
+            className="tech-chip inline-flex items-center !gap-3 rounded-lg border border-neutral-200/60 bg-white/50 !px-5 !py-2.5 !text-base font-medium text-[color:var(--foreground)] shadow-sm ring-1 ring-transparent transition duration-200 transition-colors hover:bg-black/5 hover:shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400/60 motion-reduce:transition-none dark:border-neutral-800 dark:bg-white/5 dark:hover:border-neutral-700 dark:hover:bg-white/10 whitespace-nowrap min-h-[40px]"
+          >
+            <i className={`${s.icon} text-[20px]`}></i>
+            <span>{s.name}</span>
+          </div>
+        ))}
       </div>
-    </div>
+    </>
   );
 }
